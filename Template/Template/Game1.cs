@@ -41,6 +41,8 @@ namespace Template
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
             // TODO: use this.Content to load your game content here 
+            Texture2D ball;
+            football = Content.Load<Texture2D>("football");
         }
 
         /// <summary>
