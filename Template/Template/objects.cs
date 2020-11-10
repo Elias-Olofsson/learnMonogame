@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 
 namespace Template
 {
-    class objects
+    class Objects
     {
-        protected Texture2D texture = Assets.StandardTexture;
+        protected Texture2D texture;
         protected Vector2 position = new Vector2();
         protected Vector2 size = new Vector2();
     }

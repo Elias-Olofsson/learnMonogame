@@ -11,6 +11,7 @@ namespace Template
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
+        Football football;
         //KOmentar
         public Game1()
         {
@@ -39,10 +40,11 @@ namespace Template
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
+            // TODO: use this.Content to load your game content here
+            Assets.LoadContent(Content);
 
-            // TODO: use this.Content to load your game content here 
-            Texture2D ball;
-            football = Content.Load<Texture2D>("football");
+            football.Load
+
         }
 
         /// <summary>
@@ -77,6 +79,11 @@ namespace Template
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
+            spriteBatch.Begin();
+
+            spriteBatch.Draw(football);
+
+            spriteBatch.End();
             // TODO: Add your drawing code here.
 
             base.Draw(gameTime);

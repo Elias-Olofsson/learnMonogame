@@ -9,8 +9,8 @@ using System.Threading.Tasks;
 
 namespace Template
 {
-    class football: objects
+    class Football: Objects
     {
-
+        Texture2D texture = Assets.ball;
     }
 }
