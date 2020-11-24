@@ -17,7 +17,6 @@ namespace Template
             using (var game = new Game1())
                 game.Run();
         }
-        public static bool TryParse(string s, out int result);
     }
 #endif
 }

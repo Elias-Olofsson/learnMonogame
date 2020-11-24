@@ -12,6 +12,8 @@ namespace Template
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         Football football;
+        Player player;
+        Competitor competitor;
         //KOmentar
         public Game1()
         {
@@ -43,7 +45,6 @@ namespace Template
             // TODO: use this.Content to load your game content here
             Assets.LoadContent(Content);
 
-            football.Load
 
         }
 
@@ -67,7 +68,6 @@ namespace Template
                 Exit();
 
             // TODO: Add your update logic here
-
             base.Update(gameTime);
         }
 
@@ -79,12 +79,13 @@ namespace Template
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
+            // TODO: Add your drawing code here.
+
             spriteBatch.Begin();
 
             spriteBatch.Draw(football);
 
             spriteBatch.End();
-            // TODO: Add your drawing code here.
 
             base.Draw(gameTime);
         }
