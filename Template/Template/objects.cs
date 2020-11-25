@@ -14,5 +14,14 @@ namespace Template
         protected Texture2D texture;
         protected Vector2 position = new Vector2();
         protected Vector2 size = new Vector2();
+
+
+        public Objects(Texture2D texture,Vector2 position,Vector2 size)
+        {
+            this.texture = texture;
+            this.position = position;
+            this.size = size;
+        }
+
     }
 }

@@ -11,9 +11,9 @@ namespace Template
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
-        Football football;
-        Player player;
-        Competitor competitor;
+        Texture2D football;
+        Texture2D player;
+        Texture2D competitor;
         //KOmentar
         public Game1()
         {
@@ -44,8 +44,9 @@ namespace Template
             spriteBatch = new SpriteBatch(GraphicsDevice);
             // TODO: use this.Content to load your game content here
             Assets.LoadContent(Content);
-
-
+            football = Content.Load<Texture2D>("football");
+            player = Content.Load<Texture2D>("player");
+            competitor = Content.Load<Texture2D>("competitor");
         }
 
         /// <summary>
@@ -68,6 +69,7 @@ namespace Template
                 Exit();
 
             // TODO: Add your update logic here
+
             base.Update(gameTime);
         }
 
@@ -77,7 +79,7 @@ namespace Template
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.CornflowerBlue);
+            GraphicsDevice.Clear(Color.Green);
 
             // TODO: Add your drawing code here.
 

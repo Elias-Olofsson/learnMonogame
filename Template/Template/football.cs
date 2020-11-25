@@ -11,6 +11,9 @@ namespace Template
 {
     class Football: Objects
     {
-        Texture2D texture = Assets.ball;
+        public Football() : base(Assets.ball,new Vector2(100,100),new Vector2(5,5))
+        {
+           
+        }
     }
 }
