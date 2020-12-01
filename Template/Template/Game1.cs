@@ -12,8 +12,8 @@ namespace Template
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         Football football;
-        Player player;
-        Competitor competitor;
+        Texture2D player;
+        Texture2D competitor;
         //KOmentar
         public Game1()
         {
@@ -44,8 +44,6 @@ namespace Template
             spriteBatch = new SpriteBatch(GraphicsDevice);
             // TODO: use this.Content to load your game content here
             Assets.LoadContent(Content);
-
-
         }
 
         /// <summary>
@@ -66,7 +64,7 @@ namespace Template
         {
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
-
+            football.Move();
             // TODO: Add your update logic here
             base.Update(gameTime);
         }
@@ -83,7 +81,8 @@ namespace Template
 
             spriteBatch.Begin();
 
-            spriteBatch.Draw(football);
+            football.Draw(spriteBatch);
+
 
             spriteBatch.End();
 

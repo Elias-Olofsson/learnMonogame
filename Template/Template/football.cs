@@ -11,6 +11,22 @@ namespace Template
 {
     class Football: Objects
     {
-        Texture2D texture = Assets.ball;
+        public Vector2 speed;
+        private Random random;
+        public Football()
+        {
+            texture = Assets.ball;
+            speed = new Vector2((float)random.NextDouble(), (float)random.NextDouble());
+
+            
+        }
+
+        
+
+        public void Move()
+        {
+            position += speed;
+        }
+
     }
 }

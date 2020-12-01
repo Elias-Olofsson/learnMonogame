@@ -11,8 +11,14 @@ namespace Template
 {
     class Objects
     {
+
         protected Texture2D texture;
         protected Vector2 position = new Vector2();
         protected Vector2 size = new Vector2();
+
+        public virtual void Draw(SpriteBatch spriteBatch)
+        {
+            spriteBatch.Draw(texture, new Rectangle(position.ToPoint(), size.ToPoint()), Color.White);
+        }
     }
 }
