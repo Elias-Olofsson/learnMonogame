@@ -15,10 +15,11 @@ namespace Template
         private Random random;
         public Football()
         {
-            texture = Assets.ball;
+            texture = Assets.Ball;
+            random = new Random();
             speed = new Vector2((float)random.NextDouble(), (float)random.NextDouble());
-
-            
+            size = new Vector2(20, 20);
+            speed *= 8;
         }
 
         

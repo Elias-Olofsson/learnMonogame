@@ -9,11 +9,12 @@ namespace Template
     /// </summary>
     public class Game1 : Game
     {
-        GraphicsDeviceManager graphics;
-        SpriteBatch spriteBatch;
-        Football football;
-        Texture2D player;
-        Texture2D competitor;
+        private GraphicsDeviceManager graphics;
+        //variabel som endast kan användas här för grafik
+        private SpriteBatch spriteBatch;
+        //variabel som endast kan användas här för att rita ut grejer
+        private Football football;
+        //variabel som endast kan användas här för fotbollen
         //KOmentar
         public Game1()
         {
@@ -44,6 +45,8 @@ namespace Template
             spriteBatch = new SpriteBatch(GraphicsDevice);
             // TODO: use this.Content to load your game content here
             Assets.LoadContent(Content);
+
+            football = new Football();
         }
 
         /// <summary>
@@ -66,7 +69,8 @@ namespace Template
                 Exit();
             football.Move();
             // TODO: Add your update logic here
-            base.Update(gameTime);
+            base.Update(gameTime); 
+            //updaterar flera gånger per sekund.
         }
 
         /// <summary>
@@ -80,11 +84,20 @@ namespace Template
             // TODO: Add your drawing code here.
 
             spriteBatch.Begin();
+            //börjar rittiden typ
 
-            football.Draw(spriteBatch);
-
+            foreach (Objects obj in Objects.ListOfObjects)
+            {
+                if(obj != null)
+                {
+                    obj.Draw(spriteBatch);
+                }
+            }
+            
+            //ritar ut forbollen
 
             spriteBatch.End();
+            //slutar rittiden typ
 
             base.Draw(gameTime);
         }

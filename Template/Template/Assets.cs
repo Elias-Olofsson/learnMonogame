@@ -11,15 +11,17 @@ namespace Template
 {
     static class Assets
     {
-        public static Texture2D ball;
-        public static Texture2D player;
-        public static Texture2D competitor;
+        public static Texture2D Ball { get; private set; }
+
+        public static Texture2D Player { get; private set; }
+
+        public static Texture2D Competitor { get; private set; }
 
         public static void LoadContent(ContentManager Content)
         {
-            ball = Content.Load<Texture2D>("football");
-            player = Content.Load<Texture2D>("player");
-            competitor = Content.Load<Texture2D>("competitor");
+            Ball = Content.Load<Texture2D>("football");
+            //Player = Content.Load<Texture2D>("player");
+            //Competitor = Content.Load<Texture2D>("competitor");
         }
     }
 }

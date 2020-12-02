@@ -11,10 +11,17 @@ namespace Template
 {
     class Objects
     {
+        private static List<Objects> listOfObjects = new List<Objects>();
+        public static List<Objects> ListOfObjects { get => listOfObjects;}
 
         protected Texture2D texture;
         protected Vector2 position = new Vector2();
         protected Vector2 size = new Vector2();
+
+        public Objects()
+        {
+            listOfObjects.Add(this);
+        }
 
         public virtual void Draw(SpriteBatch spriteBatch)
         {

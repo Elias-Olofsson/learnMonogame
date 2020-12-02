@@ -8,6 +8,6 @@ namespace Template
 {
     class Goalkeeper: Objects
     {
-        get()
+        
     }
 }
