@@ -16,10 +16,15 @@ namespace Template
         private Football football;
         //variabel som endast kan användas här för fotbollen
         //KOmentar
+        public const int WIDTH = 1000;
+        public const int HEIGHT = WIDTH / 3 * 2;
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
+            graphics.PreferredBackBufferWidth = WIDTH;
+            graphics.PreferredBackBufferHeight = HEIGHT;
+            IsMouseVisible = true;
         }
 
         /// <summary>
@@ -45,8 +50,9 @@ namespace Template
             spriteBatch = new SpriteBatch(GraphicsDevice);
             // TODO: use this.Content to load your game content here
             Assets.LoadContent(Content);
-
+            Assets.CreatePixel(GraphicsDevice);
             football = new Football();
+            Competitor c = new Competitor(football);
         }
 
         /// <summary>
@@ -67,7 +73,7 @@ namespace Template
         {
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
-            football.Move();
+            football.Update();
             // TODO: Add your update logic here
             base.Update(gameTime); 
             //updaterar flera gånger per sekund.
