@@ -22,15 +22,15 @@ namespace Template
         public static void LoadContent(ContentManager Content)
         {
             Ball = Content.Load<Texture2D>("football");
-            //Player = Content.Load<Texture2D>("player");
-            //Competitor = Content.Load<Texture2D>("competitor");
+            Player = Content.Load<Texture2D>("1");
+            Competitor = Content.Load<Texture2D>("1");
 
         }
 
         public static void CreatePixel(GraphicsDevice graphics)
         {
             Pixel = new Texture2D(graphics, 1, 1);
-            Pixel.SetData(new Color[1] { Color.White});
+            Pixel.SetData(new Color[] { Color.White});
         }
     }
 }

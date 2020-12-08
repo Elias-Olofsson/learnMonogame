@@ -7,6 +7,9 @@ namespace Template
 {
     class Player: Goalkeeper
     {
-
+        public Player()
+        {
+            texture = Assets.Player;
+        }
     }
 }
