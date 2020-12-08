@@ -79,7 +79,7 @@ namespace Template
             //football.Update();
             foreach (Objects obj in Objects.ListOfObjects)
             {
-                if (obj != null)
+                if (obj != null)//objektet måste finnnas
                 {
                     obj.Update();
                 }
