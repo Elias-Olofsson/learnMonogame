@@ -24,11 +24,11 @@ namespace Template
 
         public override void Update()
         {
-            if (football.Position.Y - 10 > position.Y - Height / 2)
+            if (football.Position.Y + 10 > position.Y - Height / 2)
             {
                 Move(speed);
             }
-            else if (football.Position.Y - 10 < position.Y - Height / 2)
+            else if (football.Position.Y + 10 < position.Y - Height / 2)
             {
                 Move(-speed);
             }
