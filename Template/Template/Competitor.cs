@@ -19,10 +19,9 @@ namespace Template
        
         public Competitor(Football football)
         {
-            speed = new Vector2(0, 1);
-            speed *= 10;
             this.football = football;
             position.X = Game1.WIDTH - size.X;
+            part.Location = position.ToPoint();
         }
 
         public override void Update()

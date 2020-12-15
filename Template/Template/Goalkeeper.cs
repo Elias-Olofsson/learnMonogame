@@ -22,11 +22,16 @@ namespace Template
         {
             texture = Assets.Pixel;
             size = new Vector2(20, 200);
+            speed = new Vector2(0, 1);
+            speed *= 10;
+            part = new Rectangle();
+            part.Size = size.ToPoint();
         }
         protected void Move(Vector2 speed)
         {
             stamina--;
             position += speed;
+            part.Location = position.ToPoint();
         }
     }
 }

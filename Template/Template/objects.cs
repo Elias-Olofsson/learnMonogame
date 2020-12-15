@@ -17,10 +17,15 @@ namespace Template
         protected Texture2D texture;
         protected Vector2 position = new Vector2();
         protected Vector2 size = new Vector2();
-
+        protected Rectangle part;
         public Vector2 Position
         {
             get => position;
+        }
+
+        public Rectangle Part
+        {
+            get => part;
         }
 
         public Objects()

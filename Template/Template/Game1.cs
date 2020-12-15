@@ -83,7 +83,13 @@ namespace Template
                 {
                     obj.Update();
                 }
+                if (c.Part.Intersects(football.Part) || p.Part.Intersects(football.Part)) 
+                {
+                    football.Collision();
+                }
             }
+            if (football.Position.X < -20 || football.Position.X > WIDTH)
+                Exit();
             // TODO: Add your update logic here
             base.Update(gameTime); 
             //updaterar flera gånger per sekund.
