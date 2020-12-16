@@ -9,17 +9,22 @@ namespace Template
     /// </summary>
     public class Game1 : Game
     {
+        //variabel för grafik
         private GraphicsDeviceManager graphics;
-        //variabel som endast kan användas här för grafik
+        //variabel för att ríta ut spelet
         private SpriteBatch spriteBatch;
-        //variabel som endast kan användas här för att rita ut grejer
+        //variabel för fotbollen
         private Football football;
+        //variabel för padeln på högra sidan som datorn kontrollerar
         private Competitor c;
+        //variabel för padeln på vänster sida som spelaren kontrollerar
         private Player p;
-        //variabel som endast kan användas här för fotbollen
-        //KOmentar
+        //bredden på rutan/planen
         public const int WIDTH = 1000;
+        //höjden på rutan/planen
         public const int HEIGHT = WIDTH / 3 * 2;
+
+        //fixar rutan/planen och gör så att musen blir synlig
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -91,8 +96,9 @@ namespace Template
             if (football.Position.X < -20 || football.Position.X > WIDTH)
                 Exit();
             // TODO: Add your update logic here
+            //updaterar flera gånger per sekund
             base.Update(gameTime); 
-            //updaterar flera gånger per sekund.
+            
         }
 
         /// <summary>
@@ -104,10 +110,10 @@ namespace Template
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             // TODO: Add your drawing code here.
-
-            spriteBatch.Begin();
             //börjar rittiden typ
+            spriteBatch.Begin();
 
+            //ritar ut forbollen
             foreach (Objects obj in Objects.ListOfObjects)
             {
                 if(obj != null)
@@ -115,11 +121,11 @@ namespace Template
                     obj.Draw(spriteBatch);
                 }
             }
-            
-            //ritar ut forbollen
 
-            spriteBatch.End();
+            
             //slutar rittiden typ
+            spriteBatch.End();
+            
 
             base.Draw(gameTime);
         }

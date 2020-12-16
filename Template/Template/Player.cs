@@ -20,11 +20,11 @@ namespace Template
             KeyboardState kstate = Keyboard.GetState();
             if (kstate.IsKeyDown(Keys.W))
             {
-                Move(speed);
+                Move(-speed);
             }
             else if (kstate.IsKeyDown(Keys.S))
             {
-                Move(-speed);
+                Move(speed);
             }
         }
     }
