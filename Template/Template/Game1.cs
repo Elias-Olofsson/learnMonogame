@@ -73,9 +73,15 @@ namespace Template
         {
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
-            football.Update();
+            foreach (Objects obj in Objects.ListOfObjects)
+            {
+                if (obj != null)
+                {
+                    obj.Update();
+                }
+            }
             // TODO: Add your update logic here
-            base.Update(gameTime); 
+            base.Update(gameTime);
             //updaterar flera gånger per sekund.
         }
 
@@ -94,12 +100,12 @@ namespace Template
 
             foreach (Objects obj in Objects.ListOfObjects)
             {
-                if(obj != null)
+                if (obj != null)
                 {
                     obj.Draw(spriteBatch);
                 }
             }
-            
+
             //ritar ut forbollen
 
             spriteBatch.End();
