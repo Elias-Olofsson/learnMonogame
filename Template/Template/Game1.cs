@@ -14,6 +14,8 @@ namespace Template
         private SpriteBatch spriteBatch;
         //variabel som endast kan användas här för att rita ut grejer
         private Football football;
+        private Competitor c;
+        private Player p;
         //variabel som endast kan användas här för fotbollen
         //KOmentar
         public const int WIDTH = 1000;
@@ -52,7 +54,8 @@ namespace Template
             Assets.LoadContent(Content);
             Assets.CreatePixel(GraphicsDevice);
             football = new Football();
-            Competitor c = new Competitor(football);
+            c = new Competitor(football);
+            p  = new Player();
         }
 
         /// <summary>
@@ -73,15 +76,22 @@ namespace Template
         {
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
+            //football.Update();
             foreach (Objects obj in Objects.ListOfObjects)
             {
-                if (obj != null)
+                if (obj != null)//objektet måste finnnas
                 {
                     obj.Update();
                 }
+                if (c.Part.Intersects(football.Part) || p.Part.Intersects(football.Part)) 
+                {
+                    football.Collision();
+                }
             }
+            if (football.Position.X < -20 || football.Position.X > WIDTH)
+                Exit();
             // TODO: Add your update logic here
-            base.Update(gameTime);
+            base.Update(gameTime); 
             //updaterar flera gånger per sekund.
         }
 
@@ -100,12 +110,12 @@ namespace Template
 
             foreach (Objects obj in Objects.ListOfObjects)
             {
-                if (obj != null)
+                if(obj != null)
                 {
                     obj.Draw(spriteBatch);
                 }
             }
-
+            
             //ritar ut forbollen
 
             spriteBatch.End();

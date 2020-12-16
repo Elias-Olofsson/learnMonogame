@@ -12,6 +12,7 @@ namespace Template
     class Football: Objects
     {
         private Vector2 speed;
+
         private Random random;
         public Football()
         {
@@ -23,6 +24,8 @@ namespace Template
             speed.Normalize();
             size = new Vector2(20, 20);
             speed *= 10;
+            part.Location = position.ToPoint();
+            part.Size = size.ToPoint();
         }
 
         public override void Update()
@@ -32,11 +35,11 @@ namespace Template
             {
                 speed.Y *= -1;
             }
-            if (position.X <= 0 || position.X + size.X >= Game1.WIDTH)
-            {
-                speed.X *= -1;
-            }
-
+            //if (position.X <= 0 || position.X + size.X >= Game1.WIDTH)
+            //{
+            //    speed.X *= -1;
+            //}
+            part.Location = position.ToPoint();
         }
 
         private void Move()
@@ -49,6 +52,11 @@ namespace Template
 
             float r = (float)(random.NextDouble() * (max - min) + min); 
             return r;
+        }
+
+        public void Collision()
+        {
+            speed.X *= -1;
         }
 
     }

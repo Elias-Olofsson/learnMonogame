@@ -12,7 +12,7 @@ namespace Template
      *  .
      *  . -
      *  .
-     *     H: 3   MH: 5   RY: Y-(MH-H)/2  10-(5-3)/2
+     *     H(höjd): 3   MH(max höjd): 5   RY(Rita ut Y): Y-(MH-H)/2  10-(5-3)/2
      */
     class Goalkeeper : Objects
     {
@@ -21,11 +21,17 @@ namespace Template
         protected Goalkeeper()  
         {
             texture = Assets.Pixel;
+            size = new Vector2(20, 200);
+            speed = new Vector2(0, 1);
+            speed *= 10;
+            part = new Rectangle();
+            part.Size = size.ToPoint();
         }
         protected void Move(Vector2 speed)
         {
             stamina--;
             position += speed;
+            part.Location = position.ToPoint();
         }
     }
 }
