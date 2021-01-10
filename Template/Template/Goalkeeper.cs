@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace Template
 {
+    //planer för att göra spelet lättare att vinna
     /* 
      *     Y:10  
      *  .
@@ -16,8 +17,12 @@ namespace Template
      */
     class Goalkeeper : Objects
     {
+        //gör en hastighet
         protected Vector2 speed;
-        int stamina = 1000;
+
+        //int stamina = 1000;
+
+        //sätter värde och sånt för målvakter
         protected Goalkeeper()  
         {
             texture = Assets.Pixel;
@@ -29,7 +34,10 @@ namespace Template
         }
         protected void Move(Vector2 speed)
         {
-            stamina--;
+
+            //stamina--;
+
+            //förklarar hastighet igen
             position += speed;
             part.Location = position.ToPoint();
         }

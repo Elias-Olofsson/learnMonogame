@@ -11,9 +11,12 @@ namespace Template
 {
     class Football: Objects
     {
+        //skapar värden
         private Vector2 speed;
 
         private Random random;
+
+        //gör så att fotbollar har det de värdena och sånt de behöver
         public Football()
         {
             texture = Assets.Ball;
@@ -28,6 +31,7 @@ namespace Template
             part.Size = size.ToPoint();
         }
 
+        //gör så att fotbollen kan ändra position
         public override void Update()
         {
             Move();
@@ -42,11 +46,14 @@ namespace Template
             part.Location = position.ToPoint();
         }
 
+        //förklarar för datorn hur rörelse fungerar vilket den borde kunna vid det här laget om den varit uppmärksam och kunnat koppla ihop hur den ritar uppdateringar med hur vi skriver det
+        //vi använder dock en konstig version då koden baserar sig på uppdateringars
         private void Move()
         {
             position += speed;
         }
 
+        //gör ett hyffsat random värde som har gränser så att fotbollen alltid startar åt samma håll och inte fastnar
         private float RandomFloat(float min, float max)
         {
 
@@ -54,6 +61,7 @@ namespace Template
             return r;
         }
 
+        //säger vad som händer när något koliderar
         public void Collision()
         {
             speed.X *= -1;

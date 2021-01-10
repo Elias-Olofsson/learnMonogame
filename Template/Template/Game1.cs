@@ -79,20 +79,24 @@ namespace Template
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime)
         {
+            //stänger spelet om du trycker på "esc"knappen
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
-            //football.Update();
+            
             foreach (Objects obj in Objects.ListOfObjects)
             {
-                if (obj != null)//objektet måste finnnas
+                //updaterar objekt som inte inte finns alltså finns
+                if (obj != null)
                 {
                     obj.Update();
                 }
+                //kollar om fotbollen krockat i något och därför ska kolidera
                 if (c.Part.Intersects(football.Part) || p.Part.Intersects(football.Part)) 
                 {
                     football.Collision();
                 }
             }
+            //gör så att spelet avslutas när fotbollen försvinner av skärmen
             if (football.Position.X < -20 || football.Position.X > WIDTH)
                 Exit();
             // TODO: Add your update logic here
@@ -107,7 +111,8 @@ namespace Template
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.CornflowerBlue);
+            //gör bakgrunden grön
+            GraphicsDevice.Clear(Color.Green);
 
             // TODO: Add your drawing code here.
             //börjar rittiden typ

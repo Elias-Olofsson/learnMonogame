@@ -19,11 +19,14 @@ namespace Template
        
         public Competitor(Football football)
         {
+            //lägger till fotbollen så att den kan hjälpa till med att bestämma rörelsen
             this.football = football;
+            //gör så att motståndaren startar på andra sidan planen
             position.X = Game1.WIDTH - size.X;
             part.Location = position.ToPoint();
         }
 
+        //gör så att motståndaren följer fotbollens
         public override void Update()
         {
             if (football.Position.Y + 10 > position.Y + size.Y / 2)

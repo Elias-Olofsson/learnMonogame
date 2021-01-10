@@ -11,6 +11,7 @@ namespace Template
 {
     static class Assets
     {
+        //låter andra ställen hämta de olika grejerna
         public static Texture2D Ball { get; private set; }
 
         public static Texture2D Player { get; private set; }
@@ -19,6 +20,7 @@ namespace Template
 
         public static Texture2D Pixel { get; private set; }
 
+        //laddar in visuella grejer
         public static void LoadContent(ContentManager Content)
         {
             Ball = Content.Load<Texture2D>("football");
@@ -27,6 +29,7 @@ namespace Template
 
         }
 
+        //skapar en vit pixel
         public static void CreatePixel(GraphicsDevice graphics)
         {
             Pixel = new Texture2D(graphics, 1, 1);

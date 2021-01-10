@@ -43,11 +43,13 @@
   <ItemGroup>
     <Compile Include="Assets.cs" />
     <Compile Include="Competitor.cs" />
+    <Compile Include="FileTester.cs" />
     <Compile Include="Goalkeeper.cs" />
     <Compile Include="Football.cs" />
     <Compile Include="Game1.cs" />
     <Compile Include="Objects.cs" />
     <Compile Include="Player.cs" />
+    <Compile Include="EnumConfirmation.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
